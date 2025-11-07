@@ -9,7 +9,12 @@ public class SimpleHydrodynamicModel implements SimulationModel {
 
     @Override
     public Alert evaluate(List<SensorData> recentData, Scenario scenario) {
+        copilot/add-initial-project-structure
+        double seaLevel = recentData.stream()
+                .filter(d -> d.getType() == datos.SensorDataType.SEA_LEVEL)
+
         double seaLevel = recentData.stream()\n                .filter(d -> d.getType() == datos.SensorDataType.SEA_LEVEL)
+        main
                 .mapToDouble(SensorData::getValue).average().orElse(0.0);
 
         double precip = recentData.stream()
